@@ -33,6 +33,7 @@ const StockDetails = () => {
       const oneWeek = currentTime - 7 * 24 * 60 * 60
       const oneYear = currentTime - 365 * 24 * 60 * 60
 
+      //fetching Histoorical data for stocks
       try {
         const responses = await Promise.all([finnHubApi.get("/stock/candle", {
           params: {
@@ -58,6 +59,7 @@ const StockDetails = () => {
         })])
         console.log(responses)
 
+        //setting chart data in to useState hook.
         setChartData({
           day: formatData(responses[0].data),
           week: formatData(responses[1].data),
@@ -68,7 +70,7 @@ const StockDetails = () => {
       }
     }
     fetchData()
-  }, [symbol])
+  }, [symbol]) //so that useEffect hook will only run when symbol changes
 
 
   return <div>

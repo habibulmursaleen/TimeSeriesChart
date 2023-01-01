@@ -4,12 +4,11 @@ import { useNavigate } from 'react-router-dom';
 const StockList = () => {
 
     const [stockList, setStockList] = useState(["GOOGL", "BTC-USD", "MSFT", "AMZN", "META"])
-    // const [isShown, setIsShown] = useState(false);
     const navigate = useNavigate()
 
-
+    //passing the symbol in url to go 
     const handleStockSelect = (symbol) =>{
-        navigate(`/${symbol}`) //passing the url to go 
+        navigate(`/${symbol}`) 
     }
 
     return (

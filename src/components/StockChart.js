@@ -18,6 +18,7 @@ const StockChart = ({ chartData, symbol }) => {
     }
   }
  
+  //color depending on chart data
   const color = determineTimeFormat()[determineTimeFormat().length - 1].y - determineTimeFormat()[0].y > 0 ? "#26C281" : "#ed3419"
 
   const options = {
